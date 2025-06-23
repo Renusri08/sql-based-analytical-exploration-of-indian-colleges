@@ -1,0 +1,7 @@
+SELECT District, COUNT(DISTINCT CollegeName) AS ProfessionalCollegeCount
+FROM college_courses
+WHERE IsProfessional = 'Professional Course'
+GROUP BY District
+ORDER BY ProfessionalCollegeCount DESC
+LIMIT 5;
+

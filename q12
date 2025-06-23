@@ -1,0 +1,9 @@
+SELECT CourseCategory,
+       CASE
+         WHEN CourseDuration < 12 THEN 'Short'
+         WHEN CourseDuration BETWEEN 12 AND 36 THEN 'Medium'
+         ELSE 'Long'
+       END AS DurationType,
+       COUNT(*) AS CourseCount
+FROM college_courses
+GROUP BY CourseCategory, DurationType;

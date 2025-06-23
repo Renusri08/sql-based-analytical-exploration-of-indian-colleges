@@ -1,0 +1,9 @@
+WITH EngAvg AS (
+  SELECT AVG(CourseDuration) AS AvgDuration
+  FROM college_courses
+  WHERE CourseCategory = 'Engineering'
+)
+SELECT DISTINCT CollegeName
+FROM college_courses, EngAvg
+WHERE CourseCategory = 'Engineering'
+  AND CourseDuration > EngAvg.AvgDuration;

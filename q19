@@ -1,0 +1,6 @@
+SELECT University,
+       ROUND(100.0 * SUM(CASE WHEN IsProfessional = 'Professional Course' THEN 1 ELSE 0 END) /
+                   COUNT(*), 2) AS ProfessionalUnaidedPercentage
+FROM college_courses
+WHERE Course = 'UnAided'
+GROUP BY University;

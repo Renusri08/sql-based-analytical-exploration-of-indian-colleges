@@ -1,0 +1,14 @@
+WITH DistrictAvg AS (
+  SELECT District, AVG(CourseDuration) AS DistrictAvg
+  FROM college_courses
+  GROUP BY District
+),
+TalukaAvg AS (
+  SELECT District, Taluka, AVG(CourseDuration) AS TalukaAvg
+  FROM college_courses
+  GROUP BY District, Taluka
+)
+SELECT t.Taluka, t.District, t.TalukaAvg, d.DistrictAvg
+FROM TalukaAvg t
+JOIN DistrictAvg d ON t.District = d.District
+WHERE t.TalukaAvg > d.DistrictAvg;

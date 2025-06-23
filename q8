@@ -1,0 +1,4 @@
+SELECT CollegeName
+FROM college_courses
+GROUP BY CollegeName
+HAVING MAX(CourseDuration) - MIN(CourseDuration) > 24;

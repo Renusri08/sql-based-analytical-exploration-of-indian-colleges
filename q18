@@ -1,0 +1,17 @@
+WITH Ordered AS (
+  SELECT CourseDuration,
+         ROW_NUMBER() OVER (ORDER BY CourseDuration) AS rn,
+         COUNT(*) OVER () AS total
+  FROM college_courses
+),
+Median AS (
+  SELECT AVG(CourseDuration) AS MedianDuration
+  FROM (
+    SELECT CourseDuration
+    FROM Ordered
+    WHERE rn IN ((total + 1) / 2, (total + 2) / 2)
+  )
+)
+SELECT *
+FROM college_courses
+WHERE CourseDuration > (SELECT MedianDuration FROM Median);

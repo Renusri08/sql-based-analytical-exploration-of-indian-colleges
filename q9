@@ -1,0 +1,5 @@
+SELECT University, COUNT(*) AS ProfessionalCourseCount
+FROM college_courses
+WHERE IsProfessional = 'Professional Course'
+GROUP BY University
+ORDER BY University;

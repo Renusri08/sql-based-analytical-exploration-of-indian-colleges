@@ -1,0 +1,4 @@
+SELECT DISTINCT A.CollegeName
+FROM college_courses A
+JOIN college_courses B
+  ON A.CollegeName = B.CollegeName AND A.CourseCategory <> B.CourseCategory;

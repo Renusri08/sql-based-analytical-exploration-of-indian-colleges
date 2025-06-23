@@ -1,0 +1,3 @@
+SELECT *
+FROM college_courses
+WHERE CollegeType <> 'Government';

@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS EngineeringCourseCount
+FROM college_courses
+WHERE CourseName LIKE '%Engineering%';

@@ -1,0 +1,2 @@
+SELECT DISTINCT CourseName, CourseType, CourseCategory
+FROM college_courses;

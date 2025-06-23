@@ -1,0 +1,5 @@
+SELECT CollegeName
+FROM college_courses
+WHERE CourseType IN ('Post Graduate Course', 'Under Graduate Course')
+GROUP BY CollegeName
+HAVING COUNT(DISTINCT CourseType) = 2;

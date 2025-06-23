@@ -1,0 +1,4 @@
+SELECT CourseName,
+       TRIM(SUBSTR(CourseName, INSTR(CourseName, '-') + 1)) AS Specialization
+FROM college_courses
+WHERE CourseName LIKE '%-%';

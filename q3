@@ -1,0 +1,3 @@
+SELECT CourseCategory, COUNT(DISTINCT CollegeName) AS UniqueCollegeCount
+FROM college_courses
+GROUP BY CourseCategory;

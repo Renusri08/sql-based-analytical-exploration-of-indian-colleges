@@ -1,0 +1,4 @@
+SELECT CourseType, ROUND(AVG(CourseDuration), 2) AS AvgDuration
+FROM college_courses
+GROUP BY CourseType
+ORDER BY AvgDuration DESC;

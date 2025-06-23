@@ -1,0 +1,6 @@
+SELECT University, COUNT(*) AS AidedCourseCount
+FROM college_courses
+WHERE Course = 'Aided'
+GROUP BY University
+ORDER BY AidedCourseCount DESC
+LIMIT 1 OFFSET 1;

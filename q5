@@ -1,0 +1,5 @@
+SELECT University
+FROM college_courses
+WHERE Course = 'UnAided' AND IsProfessional = 'Non-Professional Course'
+GROUP BY University
+HAVING COUNT(*) > 10;

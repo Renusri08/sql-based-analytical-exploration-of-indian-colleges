@@ -1,0 +1,3 @@
+SELECT CollegeName, CourseName, CourseDuration,
+       RANK() OVER (PARTITION BY CollegeName ORDER BY CourseDuration DESC) AS DurationRank
+FROM college_courses;
